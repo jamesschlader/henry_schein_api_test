@@ -2,9 +2,20 @@ const target = text => {
   const result = text
     .trim()
     .split(",")
-    .map(item => item.replace(/”/g, "").replace(/“/g, ""));
+    .map(item =>
+      item
+        .replace(/”/g, "")
+        .replace(/“/g, "")
+        .replace(/'/g, "")
+        .replace(/"/g, "")
+    );
   const result2 = result.map(
-    item => `[${item.replace(/”/g, "").replace(/“/g, "")}]`
+    item =>
+      `[${item
+        .replace(/”/g, "")
+        .replace(/“/g, "")
+        .replace(/'/g, "")
+        .replace(/"/g, "")}]`
   );
   if (text.length < 2) return "";
   return result.length === 7

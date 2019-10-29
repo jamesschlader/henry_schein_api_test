@@ -7,7 +7,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  console.log(req.query);
   req.query.csvStuff
     ? res.send(wholeEnchilada(req.query.csvStuff).join("\n"))
     : res.send(
